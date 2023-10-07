@@ -1,0 +1,16 @@
+.status {
+  font-size: small;
+  background: var(--COLOR-GRAY-LIGHT);
+  padding: 0.25rem;
+  border-radius: 4px;
+  line-height: 1.1;
+}
+.PLANNED {
+  background: var(--COLOR-GRAY-LIGHT);
+}
+.ONGOING {
+  background: var(--COLOR-ONGOING);
+}
+.DONE {
+  background: var(--COLOR-DONE);
+}
