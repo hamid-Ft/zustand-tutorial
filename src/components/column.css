@@ -1,3 +1,23 @@
 button {
   all: unset;
 }
+.column {
+  height: 20rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  font-weight: 700;
+  width: 33.333333%;
+  max-width: 20rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  border: dashed transparent 4px;
+}
+.column.drop {
+  border: dashed white 4px;
+}

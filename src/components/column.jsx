@@ -3,6 +3,7 @@ import Task from "./task";
 import { shallow } from "zustand/shallow";
 import "./column.css";
 import { useState } from "react";
+import classNames from "classnames";
 //import { useMemo } from "react";
 
 // eslint-disable-next-line react/prop-types
@@ -28,10 +29,28 @@ const Column = ({ state }) => {
   const addTask = useStore((store) => store.addTask);
   const [text, setText] = useState("");
   const [open, setOpen] = useState(false);
+  const [drop, setDrop] = useState(false);
+  const setDraggedTask = useStore((store) => store.setDraggedTask);
+  const draggedTask = useStore((store) => store.draggedTask);
+  const moveTask = useStore((store) => store.moveTask);
 
   return (
     <>
-      <div className="bg-gray-800 text-white h-80 font-bold w-1/3 max-w-xs my-0 mx-2 rounded p-2">
+      <div
+        className={classNames("column", { drop: drop })}
+        onDragOver={(e) => {
+          e.preventDefault();
+          setDrop(true);
+        }}
+        onDragLeave={(e) => {
+          e.preventDefault();
+          setDrop(false);
+        }}
+        onDrop={() => {
+          setDrop(false);
+          setDraggedTask(null);
+          moveTask(draggedTask, state);
+        }}>
         <div className="flex justify-between items-center ">
           <p>{state}</p>
           <button
