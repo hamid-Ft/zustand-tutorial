@@ -8,10 +8,15 @@ const Task = ({ title }) => {
   const task = useStore((store) =>
     store.tasks.find((task) => task.title === title)
   );
-
   const deleteTask = useStore((store) => store.deleteTask);
+
+  const setDraggedTask = useStore((store) => store.setDraggedTask);
+
   return (
-    <div className="bg-white rounded min-h-[5rem] text-black p-2 flex flex-col justify-between mb-2">
+    <div
+      className="rounded bg-white  min-h-[5rem] text-black p-2 flex flex-col justify-between mb-2 cursor-move"
+      draggable
+      onDragStart={() => setDraggedTask(task.title)}>
       <div>{task.title}</div>
       <div className="flex justify-between">
         <div>
