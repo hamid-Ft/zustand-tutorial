@@ -2,7 +2,7 @@ button {
   all: unset;
 }
 .column {
-  height: 20rem;
+  min-height: 20rem;
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
