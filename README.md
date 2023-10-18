@@ -1,4 +1,4 @@
-# gZustand Tutorial App with Vite, Tailwind CSS, and Extra Features
+# Zustand Tutorial App with Vite, Tailwind CSS, and Extra Features
 
 This is a simple todo app created using Vite, Zustand for state management, and styled with basic Tailwind CSS. It features three columns for organizing tasks: "Planned," "On-going," and "Done." The app also includes draggable functionality for moving todo cards between columns.
 
